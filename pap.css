@@ -1,0 +1,228 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  background: rgb(26, 42, 42);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgb(26, 42, 42);
+  margin-right: 50px;
+  width: 100%;
+  position: fixed;
+}
+.navbar  a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 16px;
+
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar  a:hover {
+  opacity: 1;
+}
+
+.navbar  a[href="#home"]:hover, .navbar .menu a[href="#home"].active {
+  color: orange;
+}
+.navbar  a[href="#home"].active::after {
+  background-color: orange;
+  opacity: 1;
+}
+
+.navbar  a[href="#service"]:hover, .navbar .menu a[href="#service"].active {
+  color: blue;
+}
+.navbar  a[href="#service"].active::after {
+  background-color: blue;
+  opacity: 1;
+}
+
+.navbar  a[href="#contact us"]:hover, .navbar .menu a[href="#contact us"].active {
+  color: red;
+}
+.navbar  a[href="#contact us"].active::after {
+  background-color: red;
+  opacity: 1;
+}
+
+.navbar  a[href="#about"]:hover, .navbar .menu a[href="#about"].active {
+  color: green;
+}
+.navbar  a[href="#about"].active::after {
+  background-color: green;
+  opacity: 1;
+}
+.navbar .logo {
+  margin-right: -10px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  color: #f0f0f0;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  height: 5px;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none;
+      height: 250px;
+      width: 30%;
+      text-align: center;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: rgb(26, 42, 42);
+      flex-direction: column;
+      padding: 20px 0;
+  }
+
+  .nav-links li {
+      margin: 10px 0;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+}
+
+.home-section {
+  margin: 0;
+  padding: 0;
+}
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 430px;
+  width: 100%;
+  background: #346645;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+.container .registration{
+  display: none;
+}
+#check:checked ~ .registration{
+  display: block;
+}
+#check:checked ~ .login{
+  display: none;
+}
+#check{
+  display: none;
+}
+.container .form{
+  padding: 2rem;
+}
+.form header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .form input{
+   height: 60px;
+   width: 100%;
+   padding: 0 15px;
+   font-size: 17px;
+   margin-bottom: 1.3rem;
+   border: 1px solid #48945f;
+   border-radius: 6px;
+   outline: none;
+ }
+ .form input:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+.form a{
+  font-size: 16px;
+  color: #009579;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form input.button{
+  color: #fff;
+  background: rgb(26, 42, 42);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.form input.button:hover{
+  background:rgb(43, 81, 81);
+}
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  color: #009579;
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}

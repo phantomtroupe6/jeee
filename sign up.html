@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Registration Form | CodingLab</title>
+  <link rel="stylesheet" href="jey.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">Sign Up</div>
+    <div class="content">
+      <form id="signupForm">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" id="signupFirstname" placeholder="Enter your Firstname" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" id="signupLastname" placeholder="Enter your Lastname" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="signupEmail" placeholder="Enter your email" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id="signupPhone" placeholder="Enter your number" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="signupPassword" placeholder="Enter your password" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" id="signupConfirmPassword" placeholder="Confirm your password" required>
+          </div>
+          
+          <div class="input-box">
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+          </div>
+        </div>
+
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Sign Up">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function handleSignup() {
+      const firstname = document.getElementById('signupFirstname').value;
+      const lastname = document.getElementById('signupLastname').value;
+      const email = document.getElementById('signupEmail').value;
+      const phone = document.getElementById('signupPhone').value;
+      const password = document.getElementById('signupPassword').value;
+      const confirmPassword = document.getElementById('signupConfirmPassword').value;
+
+      if (firstname && lastname && email && phone && password && confirmPassword) {
+        if (password === confirmPassword) {
+
+          window.location.href = "index.html"; 
+        } else {
+          alert("Passwords do not match.");
+        }
+      } else {
+        alert("Please fill in all fields.");
+      }
+    }
+
+   
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      handleSignup(); 
+    });
+  </script>
+</body>
+</html>
